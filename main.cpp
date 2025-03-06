@@ -23,6 +23,11 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	// ダブルバッファモード
 	SetDrawScreen(DX_SCREEN_BACK);
 
+	// 3D関連の設定
+	SetUseZBuffer3D(true);		// Zバッファを有効にする
+	SetWriteZBuffer3D(true);	// Zバッファへの書き込みを行う
+	SetUseBackCulling(true);	// バックカリングを有効にする
+
 	std::shared_ptr<SceneManager> pScene = std::make_shared<SceneManager>();
 	pScene->Init();
 	

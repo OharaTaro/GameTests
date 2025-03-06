@@ -17,4 +17,7 @@ public:
 	virtual void Draw() override;
 
 private:
+	void DrawDrid() const;
+
+private:
 };
