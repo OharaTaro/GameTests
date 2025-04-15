@@ -4,9 +4,7 @@
 class SceneTest : public SceneBase
 {
 public:
-	SceneTest() 
-	{
-	}
+	SceneTest();
 	virtual ~SceneTest() {}
 
 
@@ -17,7 +15,8 @@ public:
 	virtual void Draw() override;
 
 private:
-	void DrawDrid() const;
+	void DrawGrid() const;
 
 private:
+	int m_playerHandle;
 };
