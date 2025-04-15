@@ -2,6 +2,7 @@
 #include "game.h"
 #include "SceneTest.h"
 
+#include "Player.h"
 
 namespace
 {
@@ -18,6 +19,10 @@ void SceneTest::Init()
 	// モデルのロード
 	m_playerHandle = MV1LoadModel("data/model/player.mv1");
 
+	m_pPlayer = std::make_shared<Player>();
+	m_pPlayer->SetModel(m_playerHandle);
+	m_pPlayer->Init();
+
 	// カメラ設定
 	SetCameraNearFar(10.0f, 2000.0f);
 	SetCameraPositionAndTarget_UpVecY(VGet(0, 400, -1000), VGet(0, 0, 0));
@@ -31,7 +36,7 @@ void SceneTest::End()
 
 SceneBase* SceneTest::Update()
 {
-	
+	m_pPlayer->Update();
 	return this;
 }
 
@@ -39,9 +44,7 @@ void SceneTest::Draw()
 {
 	DrawGrid();
 
-	MV1DrawModel(m_playerHandle);
-
-	DrawString(0,0,"3Dのテスト",0xffffff);
+	m_pPlayer->Draw();
 }
 
 void SceneTest::DrawGrid() const

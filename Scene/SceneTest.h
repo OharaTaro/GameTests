@@ -1,6 +1,8 @@
 #pragma once
 #include "SceneBase.h"
+#include <memory>
 
+class Player;
 class SceneTest : public SceneBase
 {
 public:
@@ -19,4 +21,6 @@ private:
 
 private:
 	int m_playerHandle;
+
+	std::shared_ptr<Player> m_pPlayer;
 };
