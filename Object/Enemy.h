@@ -1,11 +1,11 @@
 #pragma once
 #include "DxLib.h"
 
-class Player
+class Enemy
 {
 public:
-	Player();
-	virtual ~Player();
+	Enemy();
+	virtual ~Enemy();
 
 	void SetModel(int model) { m_model = model; }
 
@@ -14,17 +14,11 @@ public:
 	void Draw();
 
 	VECTOR GetPos() const { return m_pos; }
-	int GetHp() const { return m_hp; }
-
-private:
-	bool isJumping() const;
 
 private:
 	int m_model;
 
 	VECTOR m_pos;
 	VECTOR m_vec;
-
-	int m_hp;
 };
 

@@ -3,6 +3,7 @@
 #include <memory>
 
 class Player;
+class Enemy;
 class SceneTest : public SceneBase
 {
 public:
@@ -21,6 +22,8 @@ private:
 
 private:
 	int m_playerHandle;
+	int m_enemyHandle;
 
 	std::shared_ptr<Player> m_pPlayer;
+	std::shared_ptr<Enemy> m_pEnemy;
 };
