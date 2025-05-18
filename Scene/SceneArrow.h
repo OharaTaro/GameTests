@@ -1,5 +1,7 @@
 #pragma once
 #include "SceneBase.h"
+#include "DxLib.h"
+
 class SceneArrow : public SceneBase
 {
 public:
@@ -18,5 +20,9 @@ private:
 
 private:
 	int m_arrowHandle;
+
+	// ランダムなベクトル生成
+	int m_interval;
+	VECTOR m_randVec;
 };
 
