@@ -29,16 +29,7 @@ SceneBase* SceneArrow::Update()
 	m_interval++;
 	if (m_interval >= 120)
 	{
-		m_randVec.x = GetRand(500) + 10.0f;
-		if (GetRand(2))	m_randVec.x *= -1.0f;
-		m_randVec.y = GetRand(500) + 10.0f;
-		if (GetRand(2))	m_randVec.y *= -1.0f;
-		m_randVec.z = GetRand(500) + 10.0f;
-		if (GetRand(2))	m_randVec.z *= -1.0f;
-
-		m_randVec = VNorm(m_randVec);
-		m_randVec = VScale(m_randVec, 200.0f);
-
+		CreateRandomVec();
 		m_interval = 0;
 	}
 	return this;
@@ -64,4 +55,17 @@ void SceneArrow::DrawGrid() const
 	{
 		DrawLine3D(VGet(x, 0, -500), VGet(x, 0, 500), 0x0000ff);
 	}
+}
+
+void SceneArrow::CreateRandomVec()
+{
+	m_randVec.x = GetRand(500) + 10.0f;
+	if (GetRand(2))	m_randVec.x *= -1.0f;
+	m_randVec.y = GetRand(500) + 10.0f;
+	if (GetRand(2))	m_randVec.y *= -1.0f;
+	m_randVec.z = GetRand(500) + 10.0f;
+	if (GetRand(2))	m_randVec.z *= -1.0f;
+
+	m_randVec = VNorm(m_randVec);
+	m_randVec = VScale(m_randVec, 200.0f);
 }

@@ -17,6 +17,7 @@ public:
 
 private:
 	void DrawGrid() const;
+	void CreateRandomVec();
 
 private:
 	int m_arrowHandle;
