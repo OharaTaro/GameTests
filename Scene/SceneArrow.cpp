@@ -55,6 +55,14 @@ void SceneArrow::DrawGrid() const
 	{
 		DrawLine3D(VGet(x, 0, -500), VGet(x, 0, 500), 0x0000ff);
 	}
+	VECTOR screenPos = ConvWorldPosToScreenPos(VGet(500,0,0));
+	DrawString(screenPos.x, screenPos.y, "X+", 0xffffff);
+	screenPos = ConvWorldPosToScreenPos(VGet(-500, 0, 0));
+	DrawString(screenPos.x, screenPos.y, "X-", 0xffffff);
+	screenPos = ConvWorldPosToScreenPos(VGet(0, 0, 500));
+	DrawString(screenPos.x, screenPos.y, "Z+", 0xffffff);
+	screenPos = ConvWorldPosToScreenPos(VGet(0, 0, -500));
+	DrawString(screenPos.x, screenPos.y, "Z-", 0xffffff);
 }
 
 void SceneArrow::CreateRandomVec()
