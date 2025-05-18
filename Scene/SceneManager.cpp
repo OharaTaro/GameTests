@@ -1,6 +1,7 @@
 #include "SceneManager.h"
 #include <cassert>
 #include "SceneTest.h"
+#include "SceneArrow.h"
 #include "Pad.h"
 #include "Mouse.h"
 
@@ -15,7 +16,8 @@ SceneManager::~SceneManager()
 
 void SceneManager::Init()
 {
-	m_pScene = new SceneTest;
+//	m_pScene = new SceneTest;
+	m_pScene = new SceneArrow;
 	m_pScene->Init();
 }
 
