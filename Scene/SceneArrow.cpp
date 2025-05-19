@@ -15,7 +15,7 @@ void SceneArrow::Init()
 
 	// ƒJƒƒ‰İ’è
 	SetCameraNearFar(10.0f, 2000.0f);
-	SetCameraPositionAndTarget_UpVecY(VGet(0, 400, -1000), VGet(0, 200, 0));
+	SetCameraPositionAndTarget_UpVecY(VGet(0, 300, -1000), VGet(0, 100, 0));
 	SetupCamera_Perspective(48.0f * DX_PI_F / 180.0f);
 }
 
